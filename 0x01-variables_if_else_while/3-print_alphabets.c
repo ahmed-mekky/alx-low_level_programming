@@ -8,14 +8,18 @@
  */
 int main(void)
 {
-        for (int i = 97; i < 123; i++)
-        {
-                putchar(i);
-        }
-        for (int i = 67; i < 91; i++)
-        {
-                putchar(i);
-        }
-  	putchar('\n');
- 	return (0);
+	int i;
+
+	for (i = 97; i < 123; i++)
+	{
+		putchar(i);
+	}
+	int i;
+
+	for (i = 67; i < 91; i++)
+	{
+		putchar(i);
+	}
+	putchar('\n');
+	return (0);
 }
