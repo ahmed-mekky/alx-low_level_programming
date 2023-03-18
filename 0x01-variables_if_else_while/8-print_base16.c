@@ -14,11 +14,9 @@ int main(void)
 	{
 		putchar('0' + i);
 	}
-	int k;
-
-	for (k = 0; k < 6; k++)
+	for (i = 0; i < 6; i++)
 	{
-		putchar('a' + k);
+		putchar('a' + i);
 	}
 	putchar('\n');
 	return (0);
