@@ -65,7 +65,9 @@ int _strlen(char *s)
 	int i = 0;
 
 	for (; *s != '\0'; s++)
+	{
 		i++;
+	}
 	return (i);
 }
 
@@ -86,8 +88,8 @@ char *_strcpy(char *to, char *from)
 	{
 		to[i] = from[i];
 	}
-	i++;
-	to[i] = '\0';
+
+	to[i++] = '\0';
 
 	return (to);
 }
