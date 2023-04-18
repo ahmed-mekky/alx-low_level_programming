@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include "dog.h"
 
-int _strlen(*s);
-char *_strcpy(*to, *from);
+int _strlen(char *s);
+char *_strcpy(char *to, char *from);
 
 /**
  * new_dog - new struct for dog
@@ -16,33 +16,44 @@ char *_strcpy(*to, *from);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	int name_1 = 0, owner_1 = 0;
-	dog_t poppy;
+	dog_t *poppy;
 
 	name_1 = _strlen(name) + 1;
 	owner_1 = _strlen(owner) + 1;
+	poppy = malloc(sizeof(dog_t));
+
 	if (name != NULL && owner != NULL)
 	{
-		name_1 = _strlen(name) + 1
+		name_1 = _strlen(name) + 1;
+
 		if (poppy == NULL)
 		{
 			return (NULL);
 		}
 
 		poppy->name = malloc(sizeof(char) * name_1);
+
 		if (poppy->name == NULL)
+		{
 			free(poppy);
 			return (NULL);
+		}
 
 		poppy->owner = malloc(sizeof(char) * owner_1);
+
 		if (poppy->owner == NULL)
+		{
 			free(poppy->name);
 			free(poppy);
 			return (NULL);
+		}
 
 		poppy->age = age;
 		poppy->name = _strcpy(poppy->name, name);
 		poppy->owner = _strcpy(poppy->owner, owner);
+	}
 
+	return (poppy);
 }
 /**
  * _strlen - calculating the length of string
@@ -69,7 +80,7 @@ int _strlen(char *s)
  */
 
 
-char *_strcpy(char *to, ºchar *from)
+char *_strcpy(char *to, char *from)
 {
 	int i;
 
@@ -79,4 +90,6 @@ char *_strcpy(char *to, ºchar *from)
 	}
 	i++;
 	to[i] = '\0';
+
+	return (to);
 }
