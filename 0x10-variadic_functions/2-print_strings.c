@@ -3,7 +3,7 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - print numbers whith sep
+ * print_strings - print numbers whith sep
  * @separator: string printed after numbers
  * @n: numbers of numbers to print
  *
@@ -23,10 +23,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		x = va_arg(args, char *);
 		if (separator == NULL || i == n - 1)
 		{
-			printf("%d", x ? x : "(nil)");
+			printf("%s", x ? x : "(nil)");
 		}
 		else
-			printf("%d%s", x ? x : "(nil)", separator);
+			printf("%s%s", x ? x : "(nil)", separator);
 	}
 	putchar('\n');
 }
