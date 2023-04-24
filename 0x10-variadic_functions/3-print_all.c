@@ -43,10 +43,10 @@ void print_all(const char * const format, ...)
 				start = 1;
 				p = va_arg(args, char *);
 				if (p)
-				{ printf("%s", p);
+				printf("%s", p);
 				break; 
-				printf("%p", p);
-				break; }}
+				printf("(nil)");
+				break; }
 		va_end(args);
 		j++;
 	}
