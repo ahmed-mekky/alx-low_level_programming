@@ -19,7 +19,8 @@ void print_all(const char * const format, ...)
 	while (format && format[j])
 	{
 		switch (format[j])
-			{case 'i':
+			{
+			case 'i':
 				switch (start)
 					case 1:
 						printf(", ");
@@ -44,9 +45,10 @@ void print_all(const char * const format, ...)
 				switch (start)
 					case 1:
 						printf(", ");
-				printf("%s", va_arg(args, char *));
+				printf("%s", va_arg(args, char *) ? va_arg(args, char *) : "(nil)");
 				start = 1;
-				break;}
+				break;
+			}
 		va_end(args);
 		j++;
 	}
