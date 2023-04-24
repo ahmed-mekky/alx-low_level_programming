@@ -21,32 +21,32 @@ void print_all(const char * const format, ...)
 		switch (format[j])
 			{case 'i':
 				switch (start)
-					case 1:
-						printf(", ");
+					{case 1: printf(", "); }
 				printf("%i", va_arg(args, int));
 				start = 1;
 				break;
 			case 'c':
 				switch (start)
-					case 1:
-						printf(", ");
+					{case 1: printf(", "); }
 				printf("%c", va_arg(args, int));
 				start = 1;
 				break;
 			case 'f':
 				switch (start)
-					case 1:
-						printf(", ");
+					{case 1: printf(", "); }
 				printf("%f", va_arg(args, double));
 				start = 1;
 				break;
 			case 's':
 				switch (start)
-					case 1:
-						printf(", ");
-				printf("%s", va_arg(args, char *) ? va_arg(args, char *) : "(nil)");
+					{case 1: printf(", "); }
 				start = 1;
+				p = va_arg(list, char*);
+				if (p)
+				{ printf("%s", p);
 				break; }
+				printf("%p", p);
+				break; }}
 		va_end(args);
 		j++;
 	}
