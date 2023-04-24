@@ -12,7 +12,7 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int j = 0, start = 0;
-
+	char * p;
 	va_list args;
 
 	va_start(args, format);
@@ -41,10 +41,10 @@ void print_all(const char * const format, ...)
 				switch (start)
 					{case 1: printf(", "); }
 				start = 1;
-				p = va_arg(list, char*);
+				p = va_arg(args, char *);
 				if (p)
 				{ printf("%s", p);
-				break; }
+				break; 
 				printf("%p", p);
 				break; }}
 		va_end(args);
