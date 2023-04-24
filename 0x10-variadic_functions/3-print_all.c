@@ -4,40 +4,51 @@
 
 /**
  * print_all - print function
- * @separator: string printed after numbers
- * @n: numbers of numbers to print
+ * @format: ...
  *
  * Return: Nothing
  */
 
 void print_all(const char * const format, ...)
 {
-	unsigned int k = 0;
+	unsigned int j = 0, start = 0;
 
 	va_list args;
 
 	va_start(args, format);
-	while (format && format[k])
+	while (format && format[j])
 	{
-		char sep = ',';
-		if (format[k] == 'i')
-		{
-			printf("%i%c", va_arg(args, int), sep);
-		}
-		else if (format[k] == 'c')
-		{
-			printf("%c%c", va_arg(args, int), sep);
-		}
-		else if (format[k] == 'f')
-		{
-			printf("%f%c", va_arg(args, double), sep);
-		}
-		else if (format[k] == 's')
-		{
-			printf("%s%c", va_arg(args, char *), sep);
-		}
+		switch (format[j])
+			{case 'i':
+				switch (start)
+					case 1:
+						printf(", ");
+				printf("%i", va_arg(args, int));
+				start = 1;
+				break;
+			case 'c':
+				switch (start)
+					case 1:
+						printf(", ");
+				printf("%c", va_arg(args, int));
+				start = 1;
+				break;
+			case 'f':
+				switch (start)
+					case 1:
+						printf(", ");
+				printf("%f", va_arg(args, double));
+				start = 1;
+				break;
+			case 's':
+				switch (start)
+					case 1:
+						printf(", ");
+				printf("%s", va_arg(args, char *));
+				start = 1;
+				break;}
 		va_end(args);
-		k++;
+		j++;
 	}
 	putchar('\n');
 }
