@@ -12,7 +12,7 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int j = 0, start = 0;
-	char * p;
+	char *p;
 	va_list args;
 
 	va_start(args, format);
@@ -43,9 +43,9 @@ void print_all(const char * const format, ...)
 				start = 1;
 				p = va_arg(args, char *);
 				if (p)
-				printf("%s", p);
-				break; 
-				printf("(nil)");
+					printf("%s", p);
+				if (p == NULL)
+					printf("(nil)");
 				break; }
 		va_end(args);
 		j++;
