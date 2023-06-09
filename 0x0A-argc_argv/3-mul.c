@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - print commands
+ * main - mul commands
  *
  * @argc: int
  * @argv: string
