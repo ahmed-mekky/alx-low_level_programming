@@ -12,7 +12,11 @@
 
 int main(int argc, char *argv[])
 {
-	argc = 0;
-	printf("%s\n", argv[argc]);
+	int i;
+	for (i = 0; argv[argc - 1][i] != '\n'; i++)
+	{
+		_putchar(argv[argc - 1][i]);
+	}
+	_putchar('\n');
 	return (0);
 }
