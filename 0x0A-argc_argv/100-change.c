@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		{
 			change -= 1;
 		}
-		printf("%d\n", coins);
 	}
+	printf("%d\n", coins);
 	return (0);
 }
