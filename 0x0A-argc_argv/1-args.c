@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - print number of commands
@@ -11,7 +11,6 @@
 
 int main(int argc, char __attribute__((__unused__)) *argv[])
 {
-	_putchar(argc);
-	_putchar('\n');
+	printf("%d\n", argc);
 	return (0);
 }
