@@ -28,6 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (str == NULL)
 	{
 		free(str);
+		return(NULL);
 	}
 	for (i = 0; i < n1; i++)
 	{
