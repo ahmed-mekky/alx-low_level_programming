@@ -21,14 +21,12 @@ int *array_range(int min, int max)
 	}
 	idk = max - min + 1;
 	str = malloc(idk * sizeof(int));
-	if (str == NULL)
+	if (!str)
 	{
 		free(str);
 		return (NULL);
 	}
 	for (i = 0; i < idk; i++)
-	{
 		str[i] = min++;
-	}
 	return (str);
 }
