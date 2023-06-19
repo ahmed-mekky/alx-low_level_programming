@@ -28,7 +28,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	for (k = 0; k < i; k++)
-		dog->name[i] = name[i];
+		dog->name[k] = name[k];
 
 	while (owner[i])
 		j++;
@@ -40,7 +40,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	for (k = 0; k < j; k++)
-		dog->owner[i] = owner[i];
+		dog->owner[k] = owner[k];
 	dog->age = age;
 	return (dog);
 }
