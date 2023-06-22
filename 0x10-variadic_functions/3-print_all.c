@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 	while (i < n)
 	{
 		if (i == n - 1)
-			separator = "\n";
+			separator = "";
 		switch (format[i])
 		{
 			case 'i':
@@ -39,4 +39,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	va_end(args);
+	putchar('\n');
 }
