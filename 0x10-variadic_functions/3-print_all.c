@@ -15,27 +15,30 @@ void print_all(const char * const format, ...)
 	separator = ", ";
 	n = strlen(format);
 	va_start(args, format);
-	while (i < n)
+	while (format)
 	{
-		if (i == n - 1)
-			separator = "";
-		switch (format[i])
+		while (i < n)
 		{
-			case 'i':
-				printf("%d%s", va_arg(args, int), separator);
-				break;
-			case 'c':
-				printf("%c%s", va_arg(args, int), separator);
-				break;
-			case 'f':
-				printf("%f%s", va_arg(args, double), separator);
-				break;
-			case 's':
-				str = va_arg(args, char *);
-				printf("%s%s", str ? str : "(nil)", separator);
-				break;
-		}
+			if (i == n - 1)
+				separator = "";
+			switch (format[i])
+			{
+				case 'i':
+					printf("%d%s", va_arg(args, int), separator);
+					break;
+				case 'c':
+					printf("%c%s", va_arg(args, int), separator);
+					break;
+				case 'f':
+					printf("%f%s", va_arg(args, double), separator);
+					break;
+				case 's':
+					str = va_arg(args, char *);
+					printf("%s%s", str ? str : "(nil)", separator);
+					break;
+			}
 		i++;
+		}
 	}
 	va_end(args);
 	putchar('\n');
