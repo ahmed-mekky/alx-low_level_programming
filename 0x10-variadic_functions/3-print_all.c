@@ -18,11 +18,7 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	while (i < n)
 	{
-		if (format[i] != 'c' && format[i] != 'i' && format[i] != 'f' && format[i] != 's')
-		{
-			i++;
-			continue;
-		}
+		
 		if (i == n - 1)
 			separator = "";
 		switch (format[i])
