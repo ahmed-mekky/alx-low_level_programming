@@ -12,11 +12,11 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0, n = 0;
 	char *separator, *str;
 
-	if (!format)
-		return (NULL);
-	separator = ", ";
-	n = strlen(format);
-	va_start(args, format);
+	if (format)
+	{
+		separator = ", ";
+		n = strlen(format);
+		va_start(args, format);
 		while (i < n)
 		{
 			if (i == n - 1)
@@ -37,8 +37,9 @@ void print_all(const char * const format, ...)
 					printf("%s%s", str ? str : "(nil)", separator);
 					break;
 			}
-		i++;
+			i++;
 		}
+	}
 	va_end(args);
 	putchar('\n');
 }
