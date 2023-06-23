@@ -13,8 +13,7 @@ void print_all(const char * const format, ...)
 	char *separator, *str;
 
 	separator = ", ";
-	while (format[n])
-		n++;
+	n = strlen(format);
 	va_start(args, format);
 	while (i < n)
 	{
@@ -34,8 +33,6 @@ void print_all(const char * const format, ...)
 			case 's':
 				str = va_arg(args, char *);
 				printf("%s%s", str ? str : "(nil)", separator);
-				break;
-			default:
 				break;
 		}
 		i++;
