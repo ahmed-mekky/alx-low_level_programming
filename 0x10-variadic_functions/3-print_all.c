@@ -12,11 +12,11 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0, n = 0;
 	char *separator, *str;
 
+	if (!format)
+		return (NULL);
 	separator = ", ";
 	n = strlen(format);
 	va_start(args, format);
-	while (format)
-	{
 		while (i < n)
 		{
 			if (i == n - 1)
@@ -39,7 +39,6 @@ void print_all(const char * const format, ...)
 			}
 		i++;
 		}
-	}
 	va_end(args);
 	putchar('\n');
 }
