@@ -20,7 +20,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	if (!newNode->str)
 	{
-		free(newNode->str);
+		free(newNode);
 		return (NULL);
 	}
 
