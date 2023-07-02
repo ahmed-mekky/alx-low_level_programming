@@ -34,6 +34,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		idk = *head;
+		while (idk->next)
+		{
+			idk = idk->next;
+		}
 		idk->next = newNode;
 	}
 	return (newNode);
