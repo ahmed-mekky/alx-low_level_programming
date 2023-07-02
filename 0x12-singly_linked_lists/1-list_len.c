@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_list - print a list of nodes
+ * list_len - print a number of nodes
  *
  * @h: queue of nodes
  *
