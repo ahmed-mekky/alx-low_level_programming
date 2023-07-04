@@ -1,20 +1,20 @@
 #include "lists.h"
 
 /**
- * print_listint - print list
- * @h: node in the list
- * Return: number of nodes.
+ * sum_listint - sum data of nodes
+ * @head: node in the list
+ * Return: the sum.
  */
 
-size_t print_listint(const listint_t *h)
+int sum_listint(listint_t *head)
 {
 	size_t counter = 0;
 
-	while (h)
+	while (head)
 	{
-		counter += h->n;
-		if (h->next)
-			h = h->next;
+		counter += head->n;
+		if (head->next)
+			head = head->next;
 		else
 			break;
 	}
