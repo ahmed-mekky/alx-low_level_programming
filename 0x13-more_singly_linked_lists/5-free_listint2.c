@@ -11,7 +11,6 @@ void free_listint2(listint_t **head)
 	listint_t *idk, *idkk;
 
 	idkk = *head;
-	idkk->next = NULL;
 	while (*head)
 	{
 		idk = *head;
