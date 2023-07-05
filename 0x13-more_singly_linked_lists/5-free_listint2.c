@@ -8,14 +8,12 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *idk, *idkk;
+	listint_t *idk;
 
-	idkk = *head;
 	while (*head)
 	{
 		idk = *head;
 		*head = (*head)->next;
 		free(idk);
 	}
-	*head = idkk;
 }
