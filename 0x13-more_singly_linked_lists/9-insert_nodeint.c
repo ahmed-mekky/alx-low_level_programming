@@ -1,5 +1,13 @@
 #include "lists.h"
 
+/**
+ * insert_nodeint_at_index - add node
+ * @head: list of nodes
+ * @idx: ...
+ * @n: ...
+ * Return: data of the node.
+ */
+
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *newNode = malloc(sizeof(listint_t)), *copy;
