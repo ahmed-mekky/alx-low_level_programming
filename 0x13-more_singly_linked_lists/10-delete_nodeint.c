@@ -1,5 +1,12 @@
 #include "lists.h"
 
+/**
+ * delete_nodeint_at_index - delete node
+ * @head: list of nodes
+ * @index: ...
+ * Return: data of the node.
+ */
+
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *copy, *next;
