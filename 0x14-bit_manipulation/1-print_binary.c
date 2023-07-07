@@ -2,11 +2,11 @@
 
 /**
  * print_binary - print binary of decimal
- * 
+ *
  *@n: int
  *
  * Return: Nothing.
- * 
+ *
  */
 
 void print_binary(unsigned long int n)
