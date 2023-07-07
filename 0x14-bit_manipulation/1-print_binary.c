@@ -19,14 +19,14 @@ void print_binary(unsigned long int n)
 		idk = (n >> i);
 		if (1 & idk)
 		{
-			putchar('1');
+			_putchar('1');
 			counter++;
 		}
 		else if (counter)
-			putchar('0');
+			_putchar('0');
 	}
 	if (!counter)
 	{
-		putchar('0');
+		_putchar('0');
 	}
 }
