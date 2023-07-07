@@ -21,5 +21,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		if (1 & idk2)
 			idk3++;
 	}
-	return idk3;
+	return (idk3);
 }
