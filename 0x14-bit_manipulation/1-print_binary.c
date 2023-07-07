@@ -9,6 +9,11 @@ void print_binary(unsigned long int n)
 	for (i = 31; i >= 0; i--)
 	{
 		idk = (1 << i);
+		if (n == 0)
+		{
+			_putchar('0');
+			return;
+		}
 		if (n & idk)
 		{
 			_putchar('1');
@@ -22,7 +27,6 @@ void print_binary(unsigned long int n)
 					_putchar('0');
 				i--;
 			}
-		_putchar('\n');
 		return;
 		}
 	}
