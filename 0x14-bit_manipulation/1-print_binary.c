@@ -11,30 +11,22 @@
 
 void print_binary(unsigned long int n)
 {
-	int i, idk;
+	int i, counter = 0;
+	unsigned long int idk;
 
-	if (n == 0)
+	for (i = 63; i >= 0; i--)
 	{
-		_putchar('0');
-		return;
-	}
-	for (i = 31; i >= 0; i--)
-	{
-		idk = (1 << i);
-		if (n & idk)
+		idk = (n >> i);
+		if (1 & idk)
 		{
-			_putchar('1');
-			i--;
-			while (i >= 0)
-			{
-				idk = (1 << i);
-				if (n & idk)
-					_putchar('1');
-				else
-					_putchar('0');
-				i--;
-			}
-		return;
+			putchar('1');
+			counter++;
 		}
+		else if (counter)
+			putchar('0');
+	}
+	if (!counter)
+	{
+		putchar('0');
 	}
 }
