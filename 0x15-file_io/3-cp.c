@@ -32,14 +32,13 @@ int main(int argc, char **argv)
 		if (fd2 < 0 || write(fd2, buffer, n_rd) != n_rd)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename2);
-			close(fd2);
-			exit(98);
+			close(fd);
+			exit(99);
 		}
 	}
 	if (n_rd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", fd);
-		close(fd);
 		exit(98);
 	}
 	x = close(fd), y = close(fd2);
