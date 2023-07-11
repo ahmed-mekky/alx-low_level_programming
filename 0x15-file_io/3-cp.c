@@ -15,11 +15,6 @@ int main(int argc, char **argv)
 	int fd, fd2, x, y, n_rd, n_wr;
 	char *filename = argv[1], *filename2 = argv[2], buffer[BUF_SIZE];
 
-	if (!filename)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
-		exit(98);
-	}
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
