@@ -21,15 +21,12 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	fd = open(filename, O_RDONLY);
-	fd2 = open(filename2, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd < 0 || fd2 < 0)
+	if (fd < 0)
 	{
-		if (fd < 0)
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
-		if (fd2 < 0)
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename2);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
+	fd2 = open(filename2, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	n_rd = read(fd, buffer, BUF_SIZE);
 	if (n_rd < 0)
 	{
