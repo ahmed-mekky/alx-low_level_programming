@@ -1,6 +1,6 @@
 #include "main.h"
 #include <string.h>
-#define BUF_SIZE 1024
+#define BUF_SIZE BUFSIZ
 /**
  * main - copy & paste
  *
