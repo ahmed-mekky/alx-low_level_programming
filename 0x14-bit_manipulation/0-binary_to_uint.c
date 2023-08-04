@@ -5,7 +5,7 @@
  *
  * @b: string contanins the binary
  *
- * return: unsigned int.
+ * Return: unsigned int.
  */
 
 unsigned int binary_to_uint(const char *b)
@@ -15,7 +15,7 @@ unsigned int binary_to_uint(const char *b)
 	if (!b)
 		return (0);
 
-	while(b[n])
+	while (b[n])
 	{
 		if (b[n] != '0' && b[n] != '1')
 			return (0);
@@ -41,6 +41,7 @@ unsigned int binary_to_uint(const char *b)
 unsigned int power(unsigned int x, unsigned int y)
 {
 	unsigned int result = 1, i;
+
 	if (x == 0 || y == 0)
 		return (1);
 	for (i = 0; i < y; i++)

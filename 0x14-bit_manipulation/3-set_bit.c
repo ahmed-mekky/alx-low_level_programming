@@ -6,7 +6,7 @@
  * @n: ...
  * @index: ....
  *
- * return: 1 if no errors, -1 if error.
+ * Return: 1 if no errors, -1 if error.
  */
 
 int set_bit(unsigned long int *n, unsigned int index)
