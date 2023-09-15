@@ -8,14 +8,13 @@
  * Return: Nothing
  */
 
-void free_dlistint(dlistint_t *head);
+void free_dlistint(dlistint_t *head)
 {
 	while (head)
 	{
-		list_t *tofree = head;
+		dlistint_t *tofree = head;
 
 		head = head->next;
-		free(tofree->str);
 		free(tofree);
 	}
 }
