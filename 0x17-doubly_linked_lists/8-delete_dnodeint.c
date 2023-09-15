@@ -1,49 +1,38 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - add a node in a doubly linked list
+ * delete_dnodeint_at_index - add a node in a doubly linked list
  *
- * @h: queue of nodes
- * @n: value of the new head node
- * @idx: ....
+ * @head: queue of nodes
+ * @index: ....
  *
- * Return: pointer to the added node.
+ * Return: 1 if it succeeded, -1 if it failed
  */
 
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *new, *old = *h;
-	unsigned int i = 1;
+	dlistint_t *old = *head;
+	unsigned int i = 0;
 
-	new = malloc(sizeof(dlistint_t));
-	if (!new)
-		return (NULL);
-	if (!*h || idx == 0)
+	if (!old)
+		return (-1);
+	if (index == 0)
 	{
-		if (idx != 0)
-			return (NULL);
-		new->n = n;
-		new->prev = NULL;
-		if (idx == 0)
-			new->next = *h;
-		else
-			new->next = NULL;
-		*h = new;
-		return (new);
+		old->next->prev == NULL;
+		return (1);
 	}
 	while (old->next && i < idx)
 	{
 		old = old->next;
 		i++;
 	}
-	if (!old->next && idx > i)
-		return (NULL);
-	new->n = n;
-	new->next = old->next;
-	old->next = new;
-	new->prev = old;
-	if (new->next)
-		new->next->prev = new;
+	if (!old->next)
+	{
+		old->prev->next == NULL;
+		return (1);
+	}
+	old->prev->next == old->next;
+	old->next->prev == old->prev;
+	return (1);
 
-	return (new);
 }
