@@ -12,7 +12,7 @@ size_t print_dlistint(const dlistint_t *h)
 {
 	size_t num = 0;
 
-	if (!h)
+	if (h == NULL)
 		return (1);
 	while (h)
 	{
