@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- * dlistint_len - get len of a doubly linked list
+ * add_dnodeint - add a node at the beginning a doubly linked list
  *
  * @head: queue of nodes
  * @n: value of the new head node
  *
- * Return: number of nodes printed.
+ * Return: pointer to the added node.
  */
 
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
@@ -17,6 +17,13 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (!new)
 	{
 		return (NULL);
+	}
+	if (!*head)
+	{
+		new->n = n;
+		new->prev = NULL;
+		new->next = NULL;
+		return (new);
 	}
 	new->n = n;
 	new->prev = NULL;
