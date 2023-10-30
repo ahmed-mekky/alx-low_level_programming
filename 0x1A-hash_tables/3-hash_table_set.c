@@ -1,53 +1,51 @@
 #include "hash_tables.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * hash_table_set - add an element to a hash table
+ * hash_table_set - adds an element to the hash table
+ * @ht: The hash table
+ * @key: The key of the new element
+ * @value: The value of the new element
  *
- * @ht: the hash table
- * @key: the Key
- * @value: the node's value
- *
- * Return: 1 if success, otherwise 0
+ * Return: 1 on success, 0 on failure
  */
-
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+int
+hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node = NULL;
 	unsigned long int index = 0;
+	hash_node_t *new_hash_node = NULL;
+	hash_node_t *tmp = NULL;
 
-	if (ht == NULL || key == NULL)
+	if (!ht || !key || !(*key) || !value)
 		return (0);
+
 	index = key_index((unsigned char *)key, ht->size);
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
+	tmp = ht->array[index];
+
+	/* check if key exists */
+	while (tmp && strcmp(tmp->key, key) != 0)
+		tmp = tmp->next;
+
+	/* update value if key already exists */
+	if (tmp)
+	{
+		free(tmp->value);
+		tmp->value = strdup(value);
+		return (1);
+	}
+
+	/* add new node if key not found */
+
+	new_hash_node = malloc(sizeof(*new_hash_node));
+	if (!new_hash_node)
 		return (0);
 
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	if (new_node->value == NULL || new_node->key == NULL)
-	{
-		free(new_node);
-		return (0);
-	}
-	if (ht->array == NULL)
-		return (0);
-	if (ht->array[index] == NULL)
-	{
-		ht->array[index] = new_node;
-		new_node->next = NULL;
-	}
-	else
-	{
-		if (strcmp(key, ht->array[index]->key) == 0)
-		{
-			ht->array[index]->value = strdup(value);
-			free(new_node->key);
-			free(new_node->value);
-			free(new_node);
-			return (1);
-		}
-		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
-	}
+	new_hash_node->key = strdup(key);
+	new_hash_node->value = strdup(value);
+
+	new_hash_node->next = ht->array[index];
+	ht->array[index] = new_hash_node;
+
 	return (1);
 }
